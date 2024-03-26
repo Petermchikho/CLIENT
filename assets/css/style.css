@@ -432,7 +432,10 @@ html, body {
   }
   
 
-
+  span{
+    font-size: calc(var(--body) - 4px);
+    line-height: 25px;
+  }
   body{
     background:var(--background);
   }
@@ -445,6 +448,7 @@ html, body {
   }
   .payment-container{
     width:700px;
+
     display:flex;
     border-radius: 6px;
     border:3px solid #f0f0f0;
@@ -607,4 +611,80 @@ form button{
 }
 .mobile-money-form{
     margin: 10px 40px;
+}
+
+
+.change-options{
+    display: none;
+}
+header{
+    display:none;
+}
+/*mobile 
+*/
+@media screen and (max-width:750px){
+    main{
+        display:flex;
+        justify-content: unset;
+        align-items: unset;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .payment-container{
+        width:100% !important;
+        display:flex;
+        border-radius: 6px;
+        border:0px solid #f0f0f0;
+      }
+    aside{
+        display: none;
+        flex-basis: 0%;
+    
+      }
+      .details{
+        background: #ffffff;
+        flex-basis: 100%;
+        border-radius:10px 10px 0px 0px ;
+        color:#737373; 
+      }
+      .change-options{
+        display: flex;
+        padding: 20px 20px;
+        background:#f4f4f4 ;
+        justify-content: space-between;
+        color: #a1a1a1;
+    }
+    .secured {
+        margin-top: 20px;
+        color: #737373;
+        display: flex;
+        justify-content: center;
+      }
+    .open-nav{
+        cursor: pointer;
+    }
+    header{
+        display:block;
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom: 0;
+        z-index: 1000;
+        background: #fff;
+    }
+    header nav{
+        background: #f4f4f4;
+        padding-left: 20px;
+}
+.payment-method{
+    color:#565656;
+    font-weight: 700;
+}
+.pick{
+    text-align: center;
+    padding: 40px 50px;
+    color:#6d6d6d;
+
+}
 }
