@@ -1,0 +1,452 @@
+/*------------------------------------------------
+# Document Base Styles
+------------------------------------------------*/
+/*----------------------------------------------------------
+## CSS Reset
+------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body {
+    width: 100%;
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden;
+  }
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed, 
+  figure, figcaption, footer, header, hgroup, 
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure, 
+  footer, header, hgroup, menu, nav, section {
+      display: block;
+  }
+  body {
+      line-height: 1;
+      
+  }
+  
+  blockquote, q {
+      quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+      content: '';
+      content: none;
+  }
+  table {
+      border-collapse: collapse;
+      border-spacing: 0;
+  }
+  button{
+      cursor: pointer;
+  }
+  
+  /*------------------------------------------------
+  ## Layout
+  ------------------------------------------------*/
+  
+  /*making 10px our base size*/
+  html {
+      /* 1rem = 10px */
+      font-size: 62.5%;
+  
+      /* Border Box fix */
+      box-sizing: border-box;
+  
+      /* Smooth scrolling */
+      scroll-behavior: smooth;
+  }
+  
+  
+  /*------------------------------------------------
+  ## CSS variables
+  ------------------------------------------------*/
+  :root{
+          /* Screen widths for reference not usage */
+      --wide: 128rem; /* 320px diff (1280 px)*/ 
+      --desktop: 96rem; /* 240px diff(960 px) */
+      --tablet: 72rem; /* 180px diff (720 px)*/
+      --phone: 54rem;/*(540 px) */
+  
+      /* Colors */
+      --color-header:rgba(35, 35, 49, 0.9);
+      --color-button:#009961;
+      --color-green-dark:#162e09;
+      --color-green:#009961;
+      --color-green-lighter:#5fcf80;
+      --color-image-filter:rgba(0, 0, 0, 0.5);
+      --color-image-filter-darker:rgba(0, 0, 0,0.9);
+      --color-background: ;
+      --color-black: rgba(0, 0, 0,0.8);
+      
+    --color-black-lighter:rgba(68, 68, 68,0.3);
+    --color-black-lighter-hover:rgba(68, 68, 68,0.5);
+      --color-white: #ffffff;
+      --color-bg: #151025; /* #050060 - darker */
+      --color-bg-dk: #050060; /* rgb(5, 0, 96); */
+      --color-purple-rgb: rgba(164, 88, 255, 1); /* #d392ff? */
+      --color-purple-dk: #a458ff;
+      --color-purple: #d392ff;
+      --color-blue-rgb: rgba(53, 68, 255, 1); /* #3544ff? */
+      --color-blue: #3544ff;
+      --color-blue-dk-rgb: rgba(10, 47, 158, 1); /* #0a2f9e? */
+      --color-blue-dk: #0a2f9e;
+      --color-neon-dk: #24d6ff;
+      --color-neon: #00ffff;
+      --color-yellow: #f5b81b;
+      --color-gray: #585963;
+  
+      /*fonts 'Open Sans','Roboto','lato',*/
+      --font-body:sans-serif;
+      
+  
+      /* Gradients eg add yours if need arises */
+    --bg-gradient: linear-gradient(
+      240deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+    );
+  --bg-gradient-img: url("https://www.transparenttextures.com/patterns/stardust.png"),
+    linear-gradient(
+      240deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+    );
+  --bg-gradient-reverse: linear-gradient(
+      60deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+    );
+  --bg-gradient-img-reverse: url("https://www.transparenttextures.com/patterns/stardust.png"),
+    linear-gradient(
+      60deg,
+      rgba(164, 88, 255, 1) 0%,
+      rgba(53, 68, 255, 1) 40%,
+      rgba(10, 47, 158, 1) 80%
+        );
+        
+  /* Shadows add different box shadows be consistent in the website*/
+  --text-shadow: 1px 2px 4px rgba(5, 0, 96, 0.5);
+  --text-shadow-strong: 1px 1px 3px rgba(5, 0, 96, 0.85);
+  
+  /* Easings */
+  --ease-bounce: cubic-bezier(.75,-0.5,0,1.75);
+  
+  /* Text sizing */
+  --base-size: 1.6rem; /* 16px */
+  --type-scale: 1.33; /*search type scale.com */
+  --small: var(--base-size);
+  --body: calc( var(--base-size) * var(--type-scale) ); /* 21.33px */
+  --h6: calc( var(--body) * var(--type-scale) ); /* 28.43px */
+  --h5: calc( var(--h6) * var(--type-scale) );/* 28.43px * 1.33  =37.8 px*/
+  --h4: calc( var(--h5) * var(--type-scale) );/* 28.43px * 1.33 * 1.33  = 50.28 px*/
+  --h3: calc( var(--h4) * var(--type-scale) );/* 28.43px * 1.33 * 1.33 * 1.33  = 66.8 px*/
+  --h2: calc( var(--h3) * var(--type-scale) );/* 28.43px * 1.33 * 1.33 * 1.33 * 1.33  = 88.95 px*/
+  --h1: calc( var(--h2) * var(--type-scale) );/* 28.43px * 1.33 * 1.33 * 1.33 * 1.33  = 118.31 px*/
+  
+  }
+  
+  /*responsive typography */
+  @media screen and (max-width: 72rem) {
+  :root {
+    --type-scale: 1.25;
+  }
+  }
+  
+  @media screen and (max-width: 56rem) {
+  :root {
+    --type-scale: 1.20;
+  }
+  }
+  @media screen and (max-width: 30rem) {
+  :root {
+    --type-scale: 1.10;
+        
+    }
+  }
+  
+  
+  /*------------------------------------------------
+  ## Typography
+  ------------------------------------------------*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+  font-family: var(--font-headings);
+  margin-bottom: 10px;
+  }
+  
+  h1 {
+  font-size: var(--h1);
+  line-height: calc( var(--h1) * var(--type-scale) * 1.2 );
+  }
+  
+  h2 {
+  font-size: var(--h2);
+  line-height: calc( var(--h2) * var(--type-scale) * 1.2 );
+  }
+  
+  h3 {
+  font-size: var(--h3);
+  line-height: calc( var(--h3) * var(--type-scale) * 1.2 );
+  }
+  
+  h4 {
+  font-size: var(--h4);
+  line-height: calc( var(--h4) * var(--type-scale) * 1.2 );
+  }
+  
+  h5 {
+  font-size: var(--h5);
+  line-height: calc( var(--h5) * var(--type-scale) * 1.2 );
+  }
+  
+  h6 {
+  font-size: var(--h6);
+  line-height: calc( var(--h6) * var(--type-scale) * 1.2 );
+  }
+  
+  p,ol {
+  font-size: var(--body);
+  line-height: calc( var(--body) * var(--type-scale) * 1.2 );
+  margin-bottom: var(--body);
+  
+     
+  }
+  .sub-info p{
+  line-height: 150%;
+  
+  }
+  @media screen and (max-width: 30rem) {
+  p {
+    line-height: calc( var(--body) * 1.5 );
+    }
+  h1 {
+  font-size: calc(var(--h1) * 1.5);
+  line-height: calc( var(--h1) * var(--type-scale) * 1.5 );
+  }
+  
+  h2 {
+  font-size: calc(var(--h2) * var(--type-scale));
+  line-height: calc( var(--h2) * var(--type-scale) * 1.5 );
+  }
+  
+  h3 {
+  font-size: calc(var(--h3) * var(--type-scale));
+  line-height: calc( var(--h3) * var(--type-scale) * 1.5 );
+  }
+  
+  h4 {
+  font-size: calc(var(--h4) * var(--type-scale));
+  line-height: calc( var(--h4) * var(--type-scale) * 1.5 );
+  }
+  
+  h5 {
+  font-size: calc(var(--h5) * var(--type-scale));
+  line-height: calc( var(--h5) * var(--type-scale) * 1.5 );
+  }
+  
+  h6 {
+  font-size: calc(var(--h6) * var(--type-scale));
+  line-height: calc( var(--h6) * var(--type-scale) * 1.5 );
+  }
+  }
+  @media screen and (max-width: 380px) {
+  p {
+    line-height: calc( var(--body) * 1.5 );
+    }
+  h1 {
+  font-size: calc(var(--h1) * var(--type-scale));
+  line-height: calc( var(--h1) * var(--type-scale) * 1.2 );
+  }
+  
+  h2 {
+  font-size: calc(var(--h2) * var(--type-scale));
+  line-height: calc( var(--h2) * var(--type-scale) * 1.2 );
+  }
+  
+  h3 {
+  font-size: calc(var(--h3) * var(--type-scale));
+  line-height: calc( var(--h3) * var(--type-scale) * 1.2 );
+  }
+  
+  h4 {
+  font-size: calc(var(--h4) * var(--type-scale));
+  line-height: calc( var(--h4) * var(--type-scale) * 1.2 );
+  }
+  
+  h5 {
+  font-size: calc(var(--h5) * var(--type-scale));
+  line-height: calc( var(--h5) * var(--type-scale) * 1.2 );
+  }
+  
+  h6 {
+  font-size: calc(var(--h6) * var(--type-scale));
+  line-height: calc( var(--h6) * var(--type-scale) * 1.2 );
+  }
+  }
+  
+  .justify-text{
+    text-align: justify;
+  }
+  small,
+  .small-text {
+      font-size: var(--base-size);
+      line-height: calc( var(--base-size) * var(--type-scale) );
+  }
+  
+  strong {
+      font-variation-settings: 'wght' 900;
+  }
+  
+  em {
+      font-style: italic;
+      font-variation-settings: 'wght' 200;
+  }
+  form p{
+    margin:0;
+  }
+  /*------------------------------------------------
+  ## Layout
+  ------------------------------------------------*/
+  *,
+  *:before,
+  *:after {
+      position: relative;
+      box-sizing: inherit;
+  }
+  
+  body {
+      font-size: var(--base-size);
+      font-family: var(--font-body);
+      margin: 0;
+      color: var(--color-black);
+      overflow-x: hidden;
+  }
+  
+  /*------------------------------------------------
+  ## Links
+  ------------------------------------------------*/
+  a {
+      color: var(--color-white);
+      text-decoration: none;
+  }
+  main a{
+    color:var(--color-black);
+  }
+  
+  a:hover,
+  a:active,
+  a:focus {
+      color: var(--color-hover-active-focus);
+  }
+  
+  a:visited {
+      color: var(--color-visited-link);
+  }
+  
+  a.btn {
+      font-size: var(--body);
+      padding: 0.8rem 2.4rem;
+      border: 2px solid var(--color-neon);
+      color: var(--color-neon);
+      border-radius: 100px;
+      position: absolute;
+      left: 50%;
+      bottom: 3.2rem;
+      transform: translateX(-50%);
+  }
+  
+  /*------------------------------------------------
+  ## Elements
+  ------------------------------------------------*/
+  /*icons*/
+  
+  
+  .ra {
+      color: var(--color-yellow);
+      -webkit-text-fill-color: var(--color-yellow);
+  }
+  
+  ol,
+  ul {
+      line-height: var(--body);
+  }
+  header ul,footer ul{
+    list-style: none;
+  }
+  .section-title {
+      font-weight: 900;
+      color: var( );
+  }
+  
+  .sub-section-title {
+      font-size: var( );
+      background-image: var( );
+      display: inline-block;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+  
+  
+  
+  /*------------------------------------------------
+  ## Accessibility
+  ------------------------------------------------*/
+  /* Text meant only for screen readers. */
+  .screen-reader-text {
+      border: 0;
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+      word-wrap: normal !important;
+  }
+  
+  .screen-reader-text:focus {
+      background-color: #eee;
+      clip: auto !important;
+      clip-path: none;
+      color: #444;
+      display: block;
+      font-size: 1em;
+      height: auto;
+      left: 5px;
+      line-height: normal;
+      padding: 15px 23px 14px;
+      text-decoration: none;
+      top: 5px;
+      width: auto;
+      z-index: 100000; /* Above WP toolbar. */
+  }
+  
