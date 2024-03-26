@@ -486,6 +486,8 @@ html, body {
   }
   ul li a{
     display: flex;
+    font-weight: 700;
+    align-items: center;
   }
   ul li a i{
     margin-right: 10px;
@@ -663,7 +665,7 @@ header{
     .open-nav{
         cursor: pointer;
     }
-    header{
+    header.show{
         display:block;
         position: fixed;
         top:0;
@@ -687,4 +689,23 @@ header{
     color:#6d6d6d;
 
 }
+.close-nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.close-nav button{
+  color: #fff;
+  background: var(--green);
+  padding:10px 20px;
+  border-radius: 30px;
+  outline:none;
+  border:none;
+
+}
+}
+@media screen and (max-width:356px){
+    .mobile-money-form {
+        margin: 10px 10px;
+      }
 }
