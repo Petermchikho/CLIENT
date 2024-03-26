@@ -93,7 +93,8 @@ html, body {
       /* Colors */
       --background:#fafafa;
       --aside:#f4f4f4;
-      --green:#72c487;
+      --green:#62b474;
+      --color:#737373;
   
       /*fonts 'Open Sans','Roboto','lato',*/
       --font-body:sans-serif;
@@ -443,7 +444,7 @@ html, body {
     min-height: 100vh;
   }
   .payment-container{
-    width:600px;
+    width:700px;
     display:flex;
     border-radius: 6px;
     border:3px solid #f0f0f0;
@@ -528,7 +529,63 @@ html, body {
     margin-top:20px;
     color:#737373; 
   }
-  .secured .black{
-    color:#000;
+  .black{
+    color:#566372;
     font-weight:700;
   }
+  .enter-text{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align:center
+  }
+  form{
+    margin-bottom: 30px;
+  }
+form .inputOpt{
+    position:relative;
+    margin-top: 20px;
+    margin-bottom:20px;
+    border: 1.5px solid #ececec;
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--color);
+}
+form .inputOpt:hover{
+    border: 1.5px solid #6eaae2;
+}
+form .inputOpt:hover span{
+    color: #6eaae2;
+}
+form .inputOpt input{
+    width:100%;
+    padding:5px;
+    outline:none;
+    border: none;
+    font-size: var(--body);
+    transition:0.5s; 
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+.half{
+    display:flex;
+    justify-content: space-between;
+}
+.half .inputOpt{
+   flex-basis:48%;
+}
+.span-link{
+    display:flex;
+    justify-content: space-between;
+}
+form button{
+    width: 100%;
+    background: #89c28d;
+    color:white;
+    outline: none;
+    border:none;
+    padding:15px;
+    font-size: var(--body);
+    font-weight: 700;
+    border-radius: 5px;
+}
