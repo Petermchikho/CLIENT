@@ -566,7 +566,13 @@ form .inputOpt input{
     margin-top: 5px;
     padding-top: 5px;
 }
-
+.inputOpt.mobile-money{
+    display:flex;
+}
+.inputOpt.mobile-money img{
+    width: 50px;
+    border-radius: 5px;
+}
 .half{
     display:flex;
     justify-content: space-between;
@@ -588,4 +594,17 @@ form button{
     font-size: var(--body);
     font-weight: 700;
     border-radius: 5px;
+}
+.mobile-phone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom:30px;
+}
+.mobile-phone img{
+    width:70px;
+}
+.mobile-money-form{
+    margin: 10px 40px;
 }
