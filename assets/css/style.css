@@ -34,6 +34,9 @@ html, body {
       font: inherit;
       vertical-align: baseline;
   }
+  ol, ul, li{
+    list-style: none;
+  }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
   footer, header, hgroup, menu, nav, section {
@@ -88,32 +91,9 @@ html, body {
       --phone: 54rem;/*(540 px) */
   
       /* Colors */
-      --color-header:rgba(35, 35, 49, 0.9);
-      --color-button:#009961;
-      --color-green-dark:#162e09;
-      --color-green:#009961;
-      --color-green-lighter:#5fcf80;
-      --color-image-filter:rgba(0, 0, 0, 0.5);
-      --color-image-filter-darker:rgba(0, 0, 0,0.9);
-      --color-background: ;
-      --color-black: rgba(0, 0, 0,0.8);
-      
-    --color-black-lighter:rgba(68, 68, 68,0.3);
-    --color-black-lighter-hover:rgba(68, 68, 68,0.5);
-      --color-white: #ffffff;
-      --color-bg: #151025; /* #050060 - darker */
-      --color-bg-dk: #050060; /* rgb(5, 0, 96); */
-      --color-purple-rgb: rgba(164, 88, 255, 1); /* #d392ff? */
-      --color-purple-dk: #a458ff;
-      --color-purple: #d392ff;
-      --color-blue-rgb: rgba(53, 68, 255, 1); /* #3544ff? */
-      --color-blue: #3544ff;
-      --color-blue-dk-rgb: rgba(10, 47, 158, 1); /* #0a2f9e? */
-      --color-blue-dk: #0a2f9e;
-      --color-neon-dk: #24d6ff;
-      --color-neon: #00ffff;
-      --color-yellow: #f5b81b;
-      --color-gray: #585963;
+      --background:#fafafa;
+      --aside:#f4f4f4;
+      --green:#72c487;
   
       /*fonts 'Open Sans','Roboto','lato',*/
       --font-body:sans-serif;
@@ -450,3 +430,105 @@ html, body {
       z-index: 100000; /* Above WP toolbar. */
   }
   
+
+
+  body{
+    background:var(--background);
+  }
+  main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .payment-container{
+    width:600px;
+    display:flex;
+    border-radius: 6px;
+    border:3px solid #f0f0f0;
+
+  }
+  aside{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background: var(--aside);
+    flex-basis: 30%;
+
+  }
+  .details{
+    background: #ffffff;
+    flex-basis: 70%;
+    padding: 20px 10px;
+    color:#737373; 
+
+  }
+  ul li{
+    padding: 20px 0px;
+    padding-right: 30px;
+    border-bottom: 1.5px solid #ececec;
+    color:#737373;
+    
+  }
+  ul li.heading{
+    padding: 10px 0px;
+    padding-right: 30px;
+
+  }
+  ul li.none{
+    border-bottom: none;
+  }
+  ul li a{
+    display: flex;
+  }
+  ul li a i{
+    margin-right: 10px;
+  }
+  ul li p{ 
+    color:#000;
+  }
+  ul li a.active span, ul li a:hover span{
+    color:#6ac691;
+    font-weight: 700;
+
+  }
+  ul li a.active i,ul li a:hover i{
+    color:#000;
+    
+  }
+  
+  ul li p{
+    margin-bottom: 0px;
+    font-size:16px;
+  }
+  .heading-payment{
+    display:flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1.5px solid #ececec;
+
+  }
+  .email-amount{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+  .margin-bottom{
+    margin-bottom: 8px;
+  }
+  .green{
+    color:#6ac993;
+    font-weight: 700;
+  }
+  .heading-payment .logo img{
+    width: 40px;
+  }
+  .secured{
+    margin-top:20px;
+    color:#737373; 
+  }
+  .secured .black{
+    color:#000;
+    font-weight:700;
+  }
