@@ -479,6 +479,7 @@ html, body {
   ul li.heading{
     padding: 10px 0px;
     padding-right: 30px;
+    font-weight:600;
 
   }
   ul li.none{
@@ -534,6 +535,7 @@ html, body {
   .secured{
     margin-top:20px;
     color:#737373; 
+    margin-bottom: 10px;
   }
   .black{
     color:#566372;
@@ -707,5 +709,11 @@ header{
 @media screen and (max-width:356px){
     .mobile-money-form {
         margin: 10px 10px;
+      }
+      .half {
+        flex-wrap: wrap;
+      }
+      .half .inputOpt {
+        flex-basis: 100%;
       }
 }
